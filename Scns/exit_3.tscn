@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://eou5u57k16yy"]
+
+[ext_resource type="Script" uid="uid://b1lrlgcj2d1u0" path="res://SCripts/exit_3.gd" id="1_dyfcv"]
+[ext_resource type="Texture2D" uid="uid://byqhob1c0ipox" path="res://Assets/Sword animation.png" id="2_dyfcv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejakc"]
+atlas = ExtResource("2_dyfcv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivmq3"]
+atlas = ExtResource("2_dyfcv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xama3"]
+atlas = ExtResource("2_dyfcv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4fny"]
+atlas = ExtResource("2_dyfcv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6h0wt"]
+atlas = ExtResource("2_dyfcv")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlgci"]
+atlas = ExtResource("2_dyfcv")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmoc0"]
+atlas = ExtResource("2_dyfcv")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8k5k"]
+atlas = ExtResource("2_dyfcv")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_620ei"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejakc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivmq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xama3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4fny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6h0wt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlgci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmoc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8k5k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivmq3"]
+size = Vector2(22, 75)
+
+[node name="Final Sword" type="Area2D"]
+script = ExtResource("1_dyfcv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -41)
+scale = Vector2(2.3125, 2.5)
+sprite_frames = SubResource("SpriteFrames_620ei")
+autoplay = "default"
+frame_progress = 0.664191
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -49.5)
+shape = SubResource("RectangleShape2D_ivmq3")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.5
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

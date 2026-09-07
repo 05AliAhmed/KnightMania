@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://d21avjwkvqfhu"]
+
+[ext_resource type="Texture2D" uid="uid://dkecleuiikqp7" path="res://Assets/SPA_Enemy_Right.png" id="1_8obu1"]
+[ext_resource type="Script" uid="uid://cc0xefy87v27n" path="res://SCripts/slime.gd" id="1_o13v1"]
+[ext_resource type="PackedScene" uid="uid://caf0ucgrla460" path="res://Scns/area_2d.tscn" id="2_uq88p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uq88p"]
+atlas = ExtResource("1_8obu1")
+region = Rect2(8, 1, 38, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o13v1"]
+atlas = ExtResource("1_8obu1")
+region = Rect2(46, 1, 38, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e83al"]
+atlas = ExtResource("1_8obu1")
+region = Rect2(84, 1, 38, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hx2v"]
+atlas = ExtResource("1_8obu1")
+region = Rect2(122, 1, 38, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3382v"]
+atlas = ExtResource("1_8obu1")
+region = Rect2(160, 1, 38, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dpet"]
+atlas = ExtResource("1_8obu1")
+region = Rect2(198, 1, 38, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_65qml"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uq88p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o13v1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e83al")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hx2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3382v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dpet")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o13v1"]
+radius = 7.53835
+
+[node name="Slime" type="Node2D"]
+script = ExtResource("1_o13v1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-10, -30.2105)
+scale = Vector2(1.47368, 1.54926)
+sprite_frames = SubResource("SpriteFrames_65qml")
+autoplay = "default"
+frame_progress = 0.174815
+
+[node name="Damage" parent="." instance=ExtResource("2_uq88p")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage"]
+position = Vector2(-10, -25)
+scale = Vector2(-2.12248, -2.12248)
+shape = SubResource("CircleShape2D_o13v1")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(-9, -27)
+scale = Vector2(-2.12248, -2.12248)
+target_position = Vector2(19, -1)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(-9, -27)
+scale = Vector2(-2.12248, -2.12248)
+target_position = Vector2(-19, 0)

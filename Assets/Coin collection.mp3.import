@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djedxnkqo7xn7"
+path="res://.godot/imported/Coin collection.mp3-73343686494ab821bcf749955a741762.mp3str"
+
+[deps]
+
+source_file="res://Assets/Coin collection.mp3"
+dest_files=["res://.godot/imported/Coin collection.mp3-73343686494ab821bcf749955a741762.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

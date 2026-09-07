@@ -1,0 +1,142 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcnaggbb0ulm7"]
+
+[ext_resource type="Texture2D" uid="uid://docluo4imev6x" path="res://Assets/Kight mania menu.png" id="1_m5d34"]
+[ext_resource type="Script" uid="uid://bwmgnnkx0n4e5" path="res://SCripts/mainmenu.gd" id="1_tpgi4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tpgi4"]
+texture = ExtResource("1_m5d34")
+modulate_color = Color(0.65834, 0.65834, 0.65834, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m5d34"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8dee"]
+bg_color = Color(0.67451, 0.67451, 0.67451, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 3
+shadow_offset = Vector2(-2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s43xs"]
+bg_color = Color(0.493545, 0.493546, 0.493545, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 3
+shadow_offset = Vector2(-2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62xeg"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 3
+shadow_offset = Vector2(-2, 2)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tpgi4")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_tpgi4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = 15.0
+offset_right = 136.0
+offset_bottom = 245.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 38
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m5d34")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h8dee")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s43xs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_62xeg")
+text = "Start"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 38
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m5d34")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h8dee")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s43xs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_62xeg")
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -110.0
+offset_right = 57.0
+offset_bottom = -87.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.828813, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 80
+text = "KNIGHTMANIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -268.0
+offset_top = 276.0
+offset_right = 269.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_offset_x = 6
+theme_override_font_sizes/font_size = 20
+text = "KNIGHTMANIA Ver.0.0 @copyright"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_Exit_pressed"]

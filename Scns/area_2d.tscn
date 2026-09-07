@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://caf0ucgrla460"]
+
+[ext_resource type="Script" uid="uid://buauwufsvp6m2" path="res://SCripts/area_2d.gd" id="1_10433"]
+[ext_resource type="AudioStream" uid="uid://bojmcg1apqwa4" path="res://Assets/damage sfx.mp3" id="2_sq5v6"]
+
+[node name="Damage" type="Area2D" groups=["Enemies"]]
+script = ExtResource("1_10433")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+
+[node name="Damage Sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_sq5v6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

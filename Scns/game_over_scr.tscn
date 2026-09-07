@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://dx0tleb3xxs7e"]
+
+[ext_resource type="Texture2D" uid="uid://docluo4imev6x" path="res://Assets/Kight mania menu.png" id="1_dokjj"]
+[ext_resource type="Script" uid="uid://y2m44kwwe0pc" path="res://SCripts/game_over_scr.gd" id="1_v73fx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v73fx"]
+texture = ExtResource("1_dokjj")
+modulate_color = Color(1, 1, 1, 0.380392)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dokjj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v73fx"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkbq7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hq6jy"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 3
+
+[node name="Game_over scr" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 649.0
+size_flags_horizontal = 0
+script = ExtResource("1_v73fx")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_v73fx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 353.0
+offset_right = 730.0
+offset_bottom = 490.0
+theme_override_constants/separation = 15
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 38
+theme_override_styles/focus = SubResource("StyleBoxFlat_dokjj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v73fx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nkbq7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hq6jy")
+text = "Play again"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 38
+theme_override_styles/focus = SubResource("StyleBoxFlat_dokjj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v73fx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nkbq7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hq6jy")
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -110.0
+offset_right = 57.0
+offset_bottom = -87.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.828813, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 80
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_again_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_exit_pressed"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://tmx2tjld4hbc"]
+
+[ext_resource type="AudioStream" uid="uid://davkhvm7ja4o1" path="res://Assets/DARK DUNGEON AMBIENCE  1 HOUR HAND CRAFTED DUNGEON SOUNDSCAPE  D&D, STORYTELLING, RELAXING, ASMR - AMBIENT METHOD.mp3" id="1_mpt55"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_mpt55")
+autoplay = true
+bus = &"BGM"

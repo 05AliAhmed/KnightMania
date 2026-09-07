@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk0dy41hs28r6"]
+
+[ext_resource type="PackedScene" uid="uid://d53j3vbynklc" path="res://Scns/spkie.tscn" id="1_wmrk5"]
+[ext_resource type="PackedScene" uid="uid://caf0ucgrla460" path="res://Scns/area_2d.tscn" id="2_afgjj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i253k"]
+size = Vector2(50, 25)
+
+[node name="1 spike" type="Node2D"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 8.0
+offset_top = -25.0
+offset_right = 56.0
+offset_bottom = -6.0
+size_flags_horizontal = 4
+theme_override_constants/separation = 54
+
+[node name="Panel" parent="HBoxContainer" instance=ExtResource("1_wmrk5")]
+layout_mode = 2
+
+[node name="Damage" parent="." instance=ExtResource("2_afgjj")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage"]
+position = Vector2(34, -19.5)
+shape = SubResource("RectangleShape2D_i253k")

@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://vh00h6ugw57q"]
+
+[ext_resource type="PackedScene" uid="uid://d53j3vbynklc" path="res://Scns/spkie.tscn" id="1_s8ie0"]
+[ext_resource type="PackedScene" uid="uid://caf0ucgrla460" path="res://Scns/area_2d.tscn" id="2_7hk8t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0yn6"]
+size = Vector2(754, 25)
+
+[node name="Spikes" type="Node2D"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 8.0
+offset_top = -25.0
+offset_right = 766.0
+offset_bottom = -6.0
+size_flags_horizontal = 4
+theme_override_constants/separation = 54
+
+[node name="Panel" parent="HBoxContainer" instance=ExtResource("1_s8ie0")]
+layout_mode = 2
+
+[node name="Panel2" parent="HBoxContainer" instance=ExtResource("1_s8ie0")]
+layout_mode = 2
+
+[node name="Panel3" parent="HBoxContainer" instance=ExtResource("1_s8ie0")]
+layout_mode = 2
+
+[node name="Panel4" parent="HBoxContainer" instance=ExtResource("1_s8ie0")]
+layout_mode = 2
+
+[node name="Panel5" parent="HBoxContainer" instance=ExtResource("1_s8ie0")]
+layout_mode = 2
+
+[node name="Panel6" parent="HBoxContainer" instance=ExtResource("1_s8ie0")]
+layout_mode = 2
+
+[node name="Panel7" parent="HBoxContainer" instance=ExtResource("1_s8ie0")]
+layout_mode = 2
+
+[node name="Panel8" parent="HBoxContainer" instance=ExtResource("1_s8ie0")]
+layout_mode = 2
+
+[node name="Panel9" parent="HBoxContainer" instance=ExtResource("1_s8ie0")]
+layout_mode = 2
+
+[node name="Panel10" parent="HBoxContainer" instance=ExtResource("1_s8ie0")]
+layout_mode = 2
+
+[node name="Panel11" parent="HBoxContainer" instance=ExtResource("1_s8ie0")]
+layout_mode = 2
+
+[node name="Panel12" parent="HBoxContainer" instance=ExtResource("1_s8ie0")]
+layout_mode = 2
+
+[node name="Panel13" parent="HBoxContainer" instance=ExtResource("1_s8ie0")]
+layout_mode = 2
+
+[node name="Panel14" parent="HBoxContainer" instance=ExtResource("1_s8ie0")]
+layout_mode = 2
+
+[node name="Damage" parent="." instance=ExtResource("2_7hk8t")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage"]
+position = Vector2(384, -19.5)
+shape = SubResource("RectangleShape2D_x0yn6")
